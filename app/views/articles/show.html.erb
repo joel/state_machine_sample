@@ -15,10 +15,10 @@
   <%= @article.published_at %>
 </p>
 
-<%- if @article.draft? -%>
+<%- if @article.can_publish? -%>
   <%= link_to 'Publish!', publish_article_path(@article), method: :put %> |
 <%- end -%>
-<%- if @article.published? -%>
+<%- if @article.can_unpublish? -%>
   <%= link_to '_Un_Publish!', unpublish_article_path(@article), method: :put %> |
 <%- end -%>
 <%= link_to 'Edit', edit_article_path(@article) %> |
