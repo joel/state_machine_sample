@@ -11,13 +11,21 @@
 </p>
 
 <p>
-  <b>Tweaked:</b>
-  <%= @article.tweaked_at %>
+  <b>Owner:</b>
+  <%= @article.owner %>
 </p>
 
 <p>
   <b>Published at:</b>
   <%= @article.published_at %>
+</p>
+
+<p>
+  <ul>
+    <%- @article.histories.all.each do |history| -%>
+    <li><%= history.created_at %> | <%= history.owner %> : <%= history.previous_state %> => <%= history.state %></li>
+    <%- end -%>
+  </ul>
 </p>
 
 <%- if @article.can_publish? -%>

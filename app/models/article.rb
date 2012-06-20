@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
-  attr_accessible :published_at, :state, :title
+  attr_accessible :published_at, :state, :title, :owner
+  
+  has_many :histories
   
   state_machine :initial => :draft do
     after_transition draft: :published, do: :set_published_at!

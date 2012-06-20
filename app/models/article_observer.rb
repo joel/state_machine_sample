@@ -1,7 +1,10 @@
 class ArticleObserver < ActiveRecord::Observer
-  # Generic transition callback *after* the transition is performed
+
+  def before_transition(article, transition)
+    article.update_attribute(:previous_state, article.state)
+  end
+
   def after_transition(article, transition)
-    Rails.logger.info "Update tweaked_at !"
-    article.update_attribute(:tweaked_at, Time.now)
+    article.histories.create(owner: article.owner, previous_state: article.previous_state, state: article.state)
   end
 end

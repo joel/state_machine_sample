@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  article_id: 1
+  owner: MyString
+  previous_state: MyString
+  state: MyString
+
+two:
+  article_id: 1
+  owner: MyString
+  previous_state: MyString
+  state: MyString

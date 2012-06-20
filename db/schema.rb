@@ -11,15 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620125839) do
+ActiveRecord::Schema.define(:version => 20120620142610) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.string   "state"
+    t.string   "previous_state"
+    t.string   "owner"
     t.datetime "published_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.datetime "tweaked_at"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "histories", :force => true do |t|
+    t.integer  "article_id"
+    t.string   "owner"
+    t.string   "previous_state"
+    t.string   "state"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end
