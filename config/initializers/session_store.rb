@@ -12,8 +12,8 @@ ActionController::Base.session = {
   :namespace   => 'sessions',
   :expire_after => 20.minutes.to_i,
   :memcache_server => ['mc2.ec2.memcachier.com:11211'],
-  :key         => c43f9b,
-  :secret      => cef01b06baafe5c1eb16
+  :key         => 'c43f9b',
+  :secret      => 'cef01b06baafe5c1eb16'
 }
 
 require 'action_controller/session/dalli_store'
