@@ -25,6 +25,7 @@ group :production do
   gem 'pg'
   gem 'unicorn'
   gem 'dalli'
+  gem 'redis'
 end
 
 
