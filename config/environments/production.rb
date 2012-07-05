@@ -42,7 +42,7 @@ StateMachineSample::Application.configure do
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
   config.cache_store = :dalli_store, ENV['MEMCACHIER_SERVERS'],
-    { namespace: 'StateMachineSample', expires_in: 1.day, compress: true, username: ENV['MEMCACHIER_USERNAME'], password: ENV['MEMCACHIER_PASSWORD'] }
+    { namespace: 'StateMachineSample', compress: true, username: ENV['MEMCACHIER_USERNAME'], password: ENV['MEMCACHIER_PASSWORD'] }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
