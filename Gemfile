@@ -26,6 +26,7 @@ group :production do
   gem 'unicorn'
   gem 'dalli'
   gem 'redis'
+  gem 'newrelic_rpm'
 end
 
 
